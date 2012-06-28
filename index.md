@@ -9,7 +9,7 @@ Just say "tiledge". The "q" is silent.
 
 ## Examples
 
-* [Simple knockout.js integration](/examples/simple-knockout-integration.html)
+* [Simple knockout.js integration](/tilejq/examples/simple-knockout-integration.html)
 
 ## API
 

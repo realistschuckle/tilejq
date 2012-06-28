@@ -26,7 +26,7 @@ Just say "tiledge". The "q" is silent.
 {% endhighlight %}
 
 {% highlight javascript %}
-  $('#tileview').tilejq();
+$('#tileview').tilejq();
 {% endhighlight %}
 
 ## License

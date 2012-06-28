@@ -1,0 +1,27 @@
+.ui-tilejq {
+  display: table;
+  width: 100%;
+}
+
+.ui-tilejq-max {
+  display: table-cell;
+}
+
+.ui-tilejq-min {
+  display: table-cell;
+  vertical-align: top
+}
+
+.ui-tilejq-min-scroller {
+  overflow: auto;
+}
+
+.ui-tilejq-tile {
+  float: left;
+  cursor: move;
+  overflow: hidden;
+}
+
+.ui-tilejq-static {
+  cursor: default;
+}

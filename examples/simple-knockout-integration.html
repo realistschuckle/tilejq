@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple knockout Integration</title>
+    <meta charset="utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE; chrome=1">
+    <link rel="stylesheet" href="../stylesheets/cssreset-min.css">
+    <link rel="stylesheet" href="../stylesheets/jquery-ui-1.8.21.css">
+    <link rel="stylesheet" href="../stylesheets/cssfonts-min.css">
+    <link rel="stylesheet" href="../jquery.ui.tilejq.css">
+    <link rel="stylesheet" href="../stylesheets/styles.css">
+    <link rel="stylesheet" href="../stylesheets/pygment_trac.css">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <style type="text/css">
+      html,
+      body.yui3-cssfonts,
+      .yui3-cssfonts *,
+      .yui3-cssfonts select,
+      .yui3-cssfonts input,
+      .yui3-cssfonts button,
+      .yui3-cssfonts textarea {
+        font: 200 13px/1.5 Lato,"Helvetica Neue",Helvetica,Arial,sans-serif;
+      }
+      #switcher a span {
+        line-height: normal;
+      }
+      p {
+        margin-top: 1em;
+        display: none;
+        clear: both;
+      }
+      header p {
+        display: block;
+      }
+      .center {
+        text-align: center;
+      }
+      #the-code pre {
+        height: 300px;
+        overflow: auto;
+      }
+      .status {
+        width: 150px;
+        height: 50px;
+        float: left;
+        line-height: 50px;
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+      }
+      .tile .extended {
+        width: 140px;
+        height: 150px;
+        padding: 5px;
+      }
+      .yui3-cssreset .ui-tilejq-tile {
+        margin: 5px;
+      }
+    </style>
+    <script src="../javascripts/knockout.js"></script>
+    <script src="../javascripts/jquery-1.7.2.min.js"></script>
+    <script src="../javascripts/jquery-ui-1.8.21.min.js"></script>
+    <script src="../jquery.ui.tilejq.js"></script>
+    <script>
+      $(function() {
+        $('#the-code').hide();
+        $('#see-the-code').toggle(function(e) {
+          e.preventDefault();
+          $(this).html('Hide the code');
+          $('#the-code').show('blind');
+        }, function(e) {
+          e.preventDefault();
+          $(this).html('See the code');
+          $('#the-code').hide('blind');
+        });
+
+        var tiles = [
+          {color: 'red', count: 2},
+          {color: 'blue', count: 12},
+          {color: 'goldenrod', count: 7},
+          {color: 'orange', count: 3},
+          {color: 'purple', count: 13},
+          {color: 'chartruese', count: 8},
+          {color: 'sienna', count: 1},
+          {color: 'peru', count: 11},
+          {color: 'darkcyan', count: 6},
+          {color: 'coral', count: 4},
+          {color: 'romato', count: 14},
+          {color: 'cornflowerblue', count: 9}
+        ];
+
+        var viewmodel = {tiles: ko.observableArray(tiles)};
+        ko.applyBindings(viewmodel);
+
+        $('#tiles').tilejq();
+      });
+    </script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>grijq</h1>
+        <h2>Simple knockout.js integration</h2>
+        <nav><div><a href="../">back to the main page</a></div></nav>
+        <div>
+          <p><a id="see-the-code" href="#">See the code</a></p>
+<div id="the-code" class="highlight"><pre><span class="kd">var</span> <span class="nx">tiles</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">2</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">12</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;goldenrod&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">7</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;orange&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">3</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;purple&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">13</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;chartruese&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">8</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;sienna&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">1</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;peru&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">11</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;darkcyan&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">6</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;coral&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">4</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;romato&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">14</span><span class="p">},</span>
+  <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">9</span><span class="p">}</span>
+<span class="p">];</span>
+
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tiles&#39;</span><span class="p">).</span><span class="nx">tilejq</span><span class="p">();</span>
+</pre></div>
+        </div>
+        <p>
+          
+        </p>
+      </header>
+      <section class="yui3-cssreset yui3-cssfonts">
+        <div id="tiles" data-bind="foreach: tiles">
+          <div class="tile">
+            <div class="status" data-bind="style: {'background-color': color}, text: count"></div>
+            <div class="extended">Here is some more explanation about what's going on.</div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/realistschuckle">realistschuckle</a></p>
+        <p><small>Powered by <a href="https://github.com/mojombo/jekyll">jekyll</a>. Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="../javascripts/scale.fix.js"></script>
+  </body>
+</html>

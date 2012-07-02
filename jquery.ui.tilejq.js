@@ -9,7 +9,7 @@
         , firstTileSmall = firstTile.children().first()
         ;
       tilejq._width = firstTile.width();
-      tilejq._height = firstTile.height();
+      tilejq._height = firstTile.outerHeight();
       tilejq._smWidth = firstTileSmall.width();
       tilejq._smHeight = firstTileSmall.height();
 
@@ -47,13 +47,10 @@
           tilejq.element.append(tileToReturn);
           tilejq.max.append(tileToMove);
           tilejq.min.width(tilejq._smWidth + 32);
-          tilejq.element.height(tilejq._height);
+          tilejq.element.height(tilejq.min.outerHeight());
         })
         .children()
           .addClass('ui-widget ui-tilejq-tile')
-          .children(':first-child')
-            .addClass('ui-widget-header')
-          .end()
           .children(':last-child')
             .addClass('ui-widget-content')
           .end()

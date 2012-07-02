@@ -43,7 +43,14 @@
         });
       tilejq.min = tilejq.wrapper.children().last();
       tilejq.element
-        .sortable()
+        .sortable({
+          start: function() {
+            tilejq.maximizer.hide();
+          },
+          stop: function() {
+            tilejq.maximizer.show();
+          }
+        })
         .addClass('ui-tilejq-min-scroller')
         .on('mouseover', '.ui-tilejq-tile-header', function(e) {
           e.stopPropagation();

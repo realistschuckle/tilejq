@@ -25,3 +25,20 @@
 .ui-tilejq-static {
   cursor: default;
 }
+
+.ui-tilejq-tile-header {
+  position: relative;
+}
+
+.ui-tilejq-tools {
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  right: 0;
+  top: 0;
+}
+
+.ui-tilejq-tools .ui-icon {
+  float: left;
+  cursor: pointer;
+}

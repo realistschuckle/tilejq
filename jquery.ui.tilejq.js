@@ -47,7 +47,7 @@
           tilejq.element.append(tileToReturn);
           tilejq.max.append(tileToMove);
           tilejq.min.width(tilejq._smWidth + 32);
-          tilejq.element.height(tilejq._height);
+          tilejq.element.height(tilejq.min.outerHeight());
         })
         .children()
           .addClass('ui-widget ui-tilejq-tile')

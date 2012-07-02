@@ -9,26 +9,48 @@ Just say "tiledge". The "q" is silent.
 
 ## Examples
 
-* [Simple knockout.js integration](/tilejq/examples/simple-knockout-integration.html)
+* [CSS-styled tiles](/tilejq/examples/css-styled-example.html)
 
 ## API
 
 ### Options
 
+*None, just yet.*
+
 ### Methods
 
+*None, just yet.*
+
 ### Events
+
+*None, just yet.*
 
 ## Usage
 
 {% highlight html %}
 <div id="tileview">
+  <div>
+    <div>Tile 1</div>
+    <div>I like being the first tile.</div>
+  </div>
+  <div>
+    <div>Tile 2</div>
+    <div>Mom always said I was her second favorite.</div>
+  </div>
+  <div>
+    <div>Tile 3</div>
+    <div>Third?!? Third!?! What kind of life is that?!?</div>
+  </div>
 </div>
 {% endhighlight %}
 
 {% highlight javascript %}
 $('#tileview').tilejq();
 {% endhighlight %}
+
+If the tileview changes, that is, you add new tiles through some DOM
+manipulation magic, please call `.tilejq()` again so the library can do its
+magic and mark your tiles.
 
 ## License
 

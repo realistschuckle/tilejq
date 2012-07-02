@@ -9,7 +9,7 @@
         , firstTileSmall = firstTile.children().first()
         ;
       tilejq._width = firstTile.width();
-      tilejq._height = firstTile.height();
+      tilejq._height = firstTile.outerHeight();
       tilejq._smWidth = firstTileSmall.width();
       tilejq._smHeight = firstTileSmall.height();
 

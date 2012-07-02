@@ -48,6 +48,10 @@ Just say "tiledge". The "q" is silent.
 $('#tileview').tilejq();
 {% endhighlight %}
 
+**tilejq** assumes that the children of the element that you pass contains
+tiles. It assumes that the tiles have two children, one that shows the
+summary information and another that shows the expanded information.
+
 If the tileview changes, that is, you add new tiles through some DOM
 manipulation magic, please call `.tilejq()` again so the library can do its
 magic and mark your tiles.

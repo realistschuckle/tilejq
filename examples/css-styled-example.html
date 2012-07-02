@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple knockout Integration</title>
+    <title>CSS-styled tiles : tilejq</title>
     <meta charset="utf-8">
     <meta http-equiv="cache-control" content="no-cache">
     <meta http-equiv="pragma" content="no-cache">
@@ -130,6 +130,9 @@
   <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;romato&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">14</span><span class="p">},</span>
   <span class="p">{</span><span class="nx">color</span><span class="o">:</span> <span class="s1">&#39;cornflowerblue&#39;</span><span class="p">,</span> <span class="nx">count</span><span class="o">:</span> <span class="mi">9</span><span class="p">}</span>
 <span class="p">];</span>
+
+<span class="kd">var</span> <span class="nx">viewmodel</span> <span class="o">=</span> <span class="p">{</span><span class="nx">tiles</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">tiles</span><span class="p">)</span><span class="p">}</span>
+<span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewmodel</span><span class="p">);</span>
 
 <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tiles&#39;</span><span class="p">).</span><span class="nx">tilejq</span><span class="p">();</span>
 </pre></div>

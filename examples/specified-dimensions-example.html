@@ -132,7 +132,10 @@
 <span class="kd">var</span> <span class="nx">viewmodel</span> <span class="o">=</span> <span class="p">{</span><span class="nx">tiles</span><span class="o">:</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observableArray</span><span class="p">(</span><span class="nx">tiles</span><span class="p">)</span><span class="p">}</span>
 <span class="nx">ko</span><span class="p">.</span><span class="nx">applyBindings</span><span class="p">(</span><span class="nx">viewmodel</span><span class="p">);</span>
 
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tiles&#39;</span><span class="p">).</span><span class="nx">tilejq</span><span class="p">();</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#tiles&#39;</span><span class="p">).</span><span class="nx">tilejq</span><span class="p">({</span>
+  <span class="nx">minimized</span><span class="o">:</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span> <span class="s1">100</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mi">60</span><span class="p">}</span>,
+  <span class="nx">maximized</span><span class="o">:</span> <span class="p">{</span><span class="nx">width</span><span class="o">:</span> <span class="s1">360</span><span class="p">,</span> <span class="nx">height</span><span class="o">:</span> <span class="mi">100</span><span class="p">}</span>
+<span class="p">});</span>
 </pre></div>
         </div>
         <p>

@@ -10,6 +10,7 @@ Just say "tiledge". The "q" is silent.
 ## Examples
 
 * [CSS-styled tiles](/tilejq/examples/css-styled-example.html)
+* [Specifically dimensioned tiles](/tilejq/examples/specified-dimension-example.html)
 
 ## API
 

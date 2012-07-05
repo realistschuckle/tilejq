@@ -1,17 +1,27 @@
 (function($) {
   $.widget('curtissimo.tilejq', {
     options: {
-
+      minimized: null,
+      maximized: null
     },
     _create: function() {
       var tilejq = this
         , firstTile = tilejq.element.children().first()
         , firstTileSmall = firstTile.children().first()
+        , getSizeOption = function(size, dimension) {
+            size = tilejq.options[size];
+            if(typeof size !== 'undefined' && size !== null) {
+              dimension = size[dimension];
+              if(typeof dimension !== 'undefined') {
+                return dimension;
+              }
+            }
+          }
         ;
-      tilejq._width = firstTile.width();
-      tilejq._height = firstTile.outerHeight();
-      tilejq._smWidth = firstTileSmall.width();
-      tilejq._smHeight = firstTileSmall.height();
+      tilejq._width = getSizeOption('maximized', 'width') || firstTile.width();
+      tilejq._height = getSizeOption('maximized', 'height') || firstTile.outerHeight();
+      tilejq._smWidth = getSizeOption('minimized', 'width') || firstTileSmall.width();
+      tilejq._smHeight = getSizeOption('minimized', 'height') || firstTileSmall.height();
 
       tilejq.wrapper = $('<div class="ui-widget ui-tilejq"><div class="ui-tilejq-max"></div><div class="ui-tilejq-min"></div></div>');
       tilejq.maximizer = $('<div class="ui-tilejq-tools ui-widget ui-widget-content"><div class="ui-icon ui-icon-arrow-4-diag"></div></div>')
@@ -66,7 +76,7 @@
           var tileToMove = $(e.target)
             .closest('.ui-tilejq-tile')
             .addClass('ui-tilejq-static')
-            .width('')
+            .width(tilejq._width)
             .height('');
           var tileToReturn = tilejq.max
             .children()
@@ -79,11 +89,14 @@
           tilejq.min.width(tilejq._smWidth + 32);
         })
         .children()
+          .width(tilejq._smWidth)
           .addClass('ui-widget ui-tilejq-tile')
           .children(':first-child')
+            .height(tilejq._smHeight)
             .addClass('ui-tilejq-tile-header')
           .end()
           .children(':last-child')
+            .height(tilejq._height)
             .addClass('ui-widget-content')
           .end()
         .end()

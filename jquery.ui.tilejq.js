@@ -28,7 +28,7 @@
             .width('')
             .show();
         })
-        .on('click', '.ui-icon', function(e) {
+        .on('mousedown', '.ui-icon', function(e) {
           e.stopPropagation();
           tilejq.minimizer.hide();
           var tileToReturn = tilejq.max
@@ -59,7 +59,7 @@
             .width('')
             .show();
         })
-        .on('click', '.ui-icon', function(e) {
+        .on('mousedown', '.ui-icon', function(e) {
           e.stopPropagation();
           tilejq.maximizer
             .hide();

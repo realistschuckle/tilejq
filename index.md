@@ -16,7 +16,10 @@ Just say "tiledge". The "q" is silent.
 
 ### Options
 
-*None, just yet.*
+| Name      | Type          | Purpose                                                                              |
+| --------- | ------------- | ------------------------------------------------------------------------------------ |
+| minimized | object        | Contains 'width' and 'height' keys to specify dimensions of the minimized tile.      |
+| maximized | object        | Contains 'width' and 'height' keys to specify dimensions of the maximized tile.      |
 
 ### Methods
 

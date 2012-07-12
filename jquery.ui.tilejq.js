@@ -88,30 +88,30 @@
           tilejq.max.append(tileToMove);
           tilejq.min.width(tilejq._smWidth + 32);
         })
-        .children()
-          .width(tilejq._smWidth)
-          .addClass('ui-widget ui-tilejq-tile')
-          .children(':first-child')
-            .height(tilejq._smHeight)
-            .addClass('ui-tilejq-tile-header')
-          .end()
-          .children(':last-child')
-            .height(tilejq._height)
-            .addClass('ui-widget-content')
-          .end()
-        .end()
         .after(tilejq.wrapper);
       tilejq.wrapper
         .find('.ui-tilejq-min')
         .append(tilejq.element);
-      tilejq.element
-        .children()
-          .height(tilejq._smHeight)
-          .width(tilejq._smWidth);
       $(document).on('mouseover', function() {
         tilejq.maximizer.hide();
         tilejq.minimizer.hide();
       });
+    },
+    _init: function() {
+      this.element
+        .children()
+          .width(this._smWidth)
+          .height(this._smHeight)
+          .addClass('ui-widget ui-tilejq-tile')
+          .children(':first-child')
+            .height(this._smHeight)
+            .addClass('ui-tilejq-tile-header')
+          .end()
+          .children(':last-child')
+            .height(this._height)
+            .addClass('ui-widget-content')
+          .end()
+        .end();
     }
   });
 })(jQuery);
